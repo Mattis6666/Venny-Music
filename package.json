@@ -1,0 +1,41 @@
+{
+	"name": "venny-music",
+	"version": "0.1.0",
+	"description": "My private music bot",
+	"main": "dist/index.js",
+	"author": "VenNeptury <sgtmattis@gmail.com>",
+	"license": "UNLICENSED",
+	"private": true,
+	"scripts": {
+		"run": "yarn clean && yarn build && node .",
+		"dev": "yarn build && node .",
+		"prebuild": "yarn lint",
+		"build": "tsc",
+		"lint": "eslint src --ext .ts",
+		"lint:fix": "eslint src --ext .ts --fix",
+		"clean": "rm -rf dist/*"
+	},
+	"dependencies": {
+		"@discordjs/opus": "^0.3.2",
+		"bufferutil": "^4.0.1",
+		"eris": "^0.13.3",
+		"erlpack": "abalabahaha/erlpack",
+		"sodium-native": "^3.2.0",
+		"ytdl-core-discord": "^1.2.1",
+		"zlib-sync": "^0.1.7"
+	},
+	"devDependencies": {
+		"@types/node": "^14.0.23",
+		"@typescript-eslint/eslint-plugin": "^3.6.1",
+		"@typescript-eslint/parser": "^3.6.1",
+		"eslint": "^7.4.0",
+		"eslint-config-marine": "^7.1.2",
+		"typescript": "^3.9.6"
+	},
+	"eslintConfig": {
+		"extends": "marine/node",
+		"parserOptions": {
+			"project": "tsconfig.eslint.json"
+		}
+	}
+}
