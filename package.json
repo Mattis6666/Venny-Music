@@ -16,6 +16,7 @@
 		"clean": "rm -rf dist/*"
 	},
 	"dependencies": {
+		"@discordjs/collection": "^0.1.5",
 		"@discordjs/opus": "^0.3.2",
 		"bufferutil": "^4.0.1",
 		"eris": "^0.13.3",
