@@ -7,16 +7,16 @@
 	"license": "UNLICENSED",
 	"private": true,
 	"scripts": {
-		"run": "yarn clean && yarn build && node .",
+		"start": "yarn clean && yarn build && node .",
 		"dev": "yarn build && node .",
-		"prebuild": "yarn lint",
+		"prebuild": "yarn lint:fix",
 		"build": "tsc",
 		"lint": "eslint src --ext .ts",
 		"lint:fix": "eslint src --ext .ts --fix",
-		"clean": "rm -rf dist/*"
+		"clean": "rm -rf dist/*",
+		"push": "f() { yarn lint:fix && tsc && git commit -am \"$1\" && git push; };f"
 	},
 	"dependencies": {
-		"@discordjs/collection": "^0.1.5",
 		"@discordjs/opus": "^0.3.2",
 		"bufferutil": "^4.0.1",
 		"eris": "^0.13.3",
@@ -31,12 +31,20 @@
 		"@typescript-eslint/parser": "^3.6.1",
 		"eslint": "^7.4.0",
 		"eslint-config-marine": "^7.1.2",
+		"husky": "^4.2.5",
+		"precise-commits": "^1.0.2",
+		"prettier": "^2.0.5",
 		"typescript": "^3.9.6"
 	},
 	"eslintConfig": {
 		"extends": "marine/node",
 		"parserOptions": {
 			"project": "tsconfig.eslint.json"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "precise-commits && yarn lint"
 		}
 	}
 }
