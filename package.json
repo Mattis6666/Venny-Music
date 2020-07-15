@@ -14,7 +14,7 @@
 		"lint": "eslint src --ext .ts",
 		"lint:fix": "eslint src --ext .ts --fix",
 		"clean": "rm -rf dist/*",
-		"push": "f() { yarn lint:fix && tsc && git commit -am \"$1\" && git push; };f"
+		"push": "f() { yarn lint:fix && tsc && git add . && git commit -am \"$1\" && git push; };f"
 	},
 	"dependencies": {
 		"@discordjs/opus": "^0.3.2",
