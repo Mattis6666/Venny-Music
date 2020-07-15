@@ -2,7 +2,7 @@ import { VenClient } from './struct/Client';
 import { join } from 'path';
 import { readdirSync } from 'fs';
 
-const client = new VenClient();
+const client = new VenClient({ dev: process.env.DEV === 'true' });
 
 let listenerCount = 0;
 let commandCount = 0;
