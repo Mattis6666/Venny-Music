@@ -4,6 +4,7 @@
 		"incremental": true,
 		"noEmitOnError": true,
 		"moduleResolution": "node",
+		"esModuleInterop": true,
 		"module": "commonjs",
 		"target": "es2019",
 		"lib": ["esnext", "esnext.array", "esnext.asynciterable", "esnext.bigint", "esnext.intl", "esnext.symbol"],
